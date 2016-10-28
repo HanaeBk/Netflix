@@ -21,9 +21,9 @@ public class FilmController {
 	
 	/* index.html */
 	
-	@GetMapping("/index")
+	@GetMapping("/CreateFilm")
 	public String showIndexGET() {
-		return "index"; 
+		return "createFilm"; 
 	}
 
 }

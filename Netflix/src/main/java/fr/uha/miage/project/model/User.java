@@ -18,6 +18,8 @@ public class User {
 	private String prenom;
 	private String mail;
 	private String password;
+	private boolean admin; // True = Admin ; False = Utilisateur normal
+
 	private Date valid;
 	private int montantMensuel;
 	private Long NmCarteBancaire;
