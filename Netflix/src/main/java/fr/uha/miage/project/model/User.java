@@ -14,9 +14,9 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String pseudo;
-	private String nom;
+	private String name;
 	private String prenom;
-	private String email;
+	private String mail;
 	private String password;
 	private Date valid;
 	private int montantMensuel;
@@ -39,11 +39,12 @@ public class User {
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
-	public String getNom() {
-		return nom;
+
+	public String getName() {
+		return name;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPrenom() {
 		return prenom;
@@ -51,11 +52,12 @@ public class User {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getEmail() {
-		return email;
+
+	public String getMail() {
+		return mail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 	public String getPassword() {
 		return password;

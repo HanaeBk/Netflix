@@ -2,10 +2,13 @@ package fr.uha.miage.project.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +19,11 @@ public class Film {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String titre;
+	
+	@ManyToOne
 	private Realisateur realisateur;
+	
+	@OneToMany(cascade=CascadeType.PERSIST)
 	private List<Acteur> acteurParticipants;
 	private String UrlVideo;
 	private String UrlImage;

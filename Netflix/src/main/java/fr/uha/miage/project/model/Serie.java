@@ -18,12 +18,17 @@ public class Serie {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String nom;
+	
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	private Realisateur realisateur;
 	private String producteur;
 	private String description;
-//	private List<Long> idacteurParticipant;
 	
-	//private Category category;
+	@OneToMany(cascade=CascadeType.PERSIST)
+	private List<Acteur> idacteurParticipant;
+	
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	private Category category;
 	private int nbEpisode;
 	private String UrlImage;
 	
@@ -45,7 +50,7 @@ public class Serie {
 		this.nom = nom;
 	}
 	
-	@OneToMany(cascade=CascadeType.PERSIST)
+
 	public Realisateur getRealisateur() {
 		return realisateur;
 	}
@@ -64,15 +69,14 @@ public class Serie {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-/*
-	@ManyToOne
-    @JoinColumn(name = "Serie_category_id")
+
+	
 	public Category getCategory() {
 		return category;
 	}
 	public void setCategory(Category category) {
 		this.category = category;
-	}*/
+	}
 	public int getNbEpisode() {
 		return nbEpisode;
 	}

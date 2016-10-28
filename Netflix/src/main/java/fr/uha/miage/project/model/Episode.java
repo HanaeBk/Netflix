@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Episode {
@@ -12,6 +13,8 @@ public class Episode {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String Titre;
+	
+	@ManyToOne
 	private Serie serie;
 	private int Numero;
 	private String Url;

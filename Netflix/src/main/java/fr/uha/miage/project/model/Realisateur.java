@@ -4,10 +4,12 @@ package fr.uha.miage.project.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Realisateur {
@@ -17,6 +19,7 @@ public class Realisateur {
 	private Long id;
 	private String nom;
 	private String prenom;
+	@OneToMany(cascade=CascadeType.PERSIST)
 	private List<Film> Mediatheque;
 	private String Description;
 	
