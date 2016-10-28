@@ -39,14 +39,14 @@ public class UserController {
 		  	@GetMapping("/create")
 		  	public String createUserForm(Model model) {
 		  		model.addAttribute("user", new User());
-		  		return "create";
+		  		return "CreateUser";
 		  	}
 		  	
 		  	@PostMapping("/create")
 		  	public String createUser(@Valid User User, BindingResult bindingResult) {
 		  
 		  		if(bindingResult.hasErrors())
-		  			return "create";
+		  			return "CreateUser";
 		  		
 		  		User sauvegardeUser = UserRepository.save(User);
 		  		
@@ -71,7 +71,7 @@ public class UserController {
 		  		User User = UserRepository.findOne(id);
 		  		model.addAttribute("user", User);
 		  		
-		  		return "edit";
+		  		return "ModifyUser";
 		  	}
 		  	
 		  	@PostMapping("/edit")
