@@ -1,4 +1,4 @@
-package fr.uha.miage.project.Model;
+package fr.uha.miage.project.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

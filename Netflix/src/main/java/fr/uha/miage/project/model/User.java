@@ -1,4 +1,4 @@
-package fr.uha.miage.project.Model;
+package fr.uha.miage.project.model;
 
 import java.sql.Date;
 

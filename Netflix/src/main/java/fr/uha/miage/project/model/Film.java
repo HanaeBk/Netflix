@@ -1,4 +1,4 @@
-package fr.uha.miage.project.Model;
+package fr.uha.miage.project.model;
 
 import java.util.List;
 
@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Film {
@@ -20,13 +22,16 @@ public class Film {
 	private String UrlImage;
 	private int nbVue;
 	
+	
+
 	public Film() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	// Getters & Setters
-	
-	
+		
 	
 	public Long getId() {
 		return id;

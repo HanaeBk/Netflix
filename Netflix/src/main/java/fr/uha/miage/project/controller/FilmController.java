@@ -1,4 +1,4 @@
-package fr.uha.miage.project.Controller;
+package fr.uha.miage.project.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.uha.miage.project.Model.Film;
-import fr.uha.miage.project.Repository.FilmRepository;
+import fr.uha.miage.project.model.Film;
+import fr.uha.miage.project.repository.FilmRepository;
 
 
 @Controller
@@ -21,11 +21,9 @@ public class FilmController {
 	
 	/* index.html */
 	
-	@GetMapping("/single")
-	public String showIndexGET(Model model) {
-		//Iterable<Film> list = filmRepository.findAll();
-		//model.addAttribute("films", list);
-		return "single"; 
+	@GetMapping("/index")
+	public String showIndexGET() {
+		return "index"; 
 	}
 
 }

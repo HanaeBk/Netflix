@@ -1,4 +1,6 @@
-package fr.uha.miage.project.Model;
+
+
+package fr.uha.miage.project.model;
 
 import java.util.List;
 
@@ -8,17 +10,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Acteur {
-
+public class Realisateur {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id ; 
+	private Long id;
 	private String nom;
 	private String prenom;
-	private List<Film> films;
+	private List<Film> Mediatheque;
+	private String Description;
 	
 	
 	// Getters & Setters
+	
 	
 	
 	public Long getId() {
@@ -39,11 +43,20 @@ public class Acteur {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public List<Film> getFilms() {
-		return films;
+	public List<Film> getMediatheque() {
+		return Mediatheque;
 	}
-	public void setFilms(List<Film> films) {
-		this.films = films;
+	public void setMediatheque(List<Film> mediatheque) {
+		Mediatheque = mediatheque;
+	}
+	public String getDescription() {
+		return Description;
+	}
+	public void setDescription(String description) {
+		Description = description;
 	}
 	
+
+	
+
 }

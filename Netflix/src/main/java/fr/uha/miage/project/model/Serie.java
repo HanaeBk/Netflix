@@ -1,11 +1,15 @@
-package fr.uha.miage.project.Model;
+package fr.uha.miage.project.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Serie {
@@ -17,8 +21,9 @@ public class Serie {
 	private Realisateur realisateur;
 	private String producteur;
 	private String description;
-	private List<Acteur> acteurParticipant;
-	private Category category;
+//	private List<Long> idacteurParticipant;
+	
+	//private Category category;
 	private int nbEpisode;
 	private String UrlImage;
 	
@@ -39,6 +44,8 @@ public class Serie {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	
+	@OneToMany(cascade=CascadeType.PERSIST)
 	public Realisateur getRealisateur() {
 		return realisateur;
 	}
@@ -57,18 +64,15 @@ public class Serie {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public List<Acteur> getActeurParticipant() {
-		return acteurParticipant;
-	}
-	public void setActeurParticipant(List<Acteur> acteurParticipant) {
-		this.acteurParticipant = acteurParticipant;
-	}
+/*
+	@ManyToOne
+    @JoinColumn(name = "Serie_category_id")
 	public Category getCategory() {
 		return category;
 	}
 	public void setCategory(Category category) {
 		this.category = category;
-	}
+	}*/
 	public int getNbEpisode() {
 		return nbEpisode;
 	}

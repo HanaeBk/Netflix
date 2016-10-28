@@ -1,4 +1,4 @@
-package fr.uha.miage.project.Controller;
+package fr.uha.miage.project.controller;
 
 import org.springframework.stereotype.Controller;
 
