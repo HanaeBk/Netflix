@@ -33,7 +33,7 @@ public class UserController {
 		  
 		  		Iterable<User> list =  UserRepository.findAll();
 		  		model.addAttribute("user", list);
-		  		return "index"; 
+		  		return "ListUsers"; 
 		  	}
 		  	
 		  	@GetMapping("/create")

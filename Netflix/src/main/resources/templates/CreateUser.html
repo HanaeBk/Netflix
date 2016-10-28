@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Movie_store A Entertainment Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -48,24 +48,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	      </div>
 	      <div class="content">
       	     <div class="register">
-		  	  <form> 
+		  	  <form action="#" th:action="@{/create}" th:object="${user}" method="post"> 
 				 <div class="register-top-grid">
-					<h3>Personal Information</h3>
+					<h3>Fill in your personal informations</h3>
 					 <div>
 						<span>First Name<label>*</label></span>
-						<input type="text"/> 
+						<input type="text" th:field="*{prenom}" /> 
 					 </div>
 					 <div>
 						<span>Last Name<label>*</label></span>
-						<input type="text"/> 
+						<input type="text" th:field="*{name}" /> 
 					 </div>
 					 <div>
 						<span>Pseudo<label>*</label></span>
-						<input type="text"/> 
+						<input type="text" th:field="*{pseudo}" /> 
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
-						 <input type="text"/> 
+						 <input type="text" th:field="*{mail}" /> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    <h3>Login Information</h3>
 							 <div>
 								<span>Password<label>*</label></span>
-								<input type="text"/>
+								<input type="text" th:field="*{password}" />
 							 </div>
 							 <div>
 								<span>Confirm Password<label>*</label></span>

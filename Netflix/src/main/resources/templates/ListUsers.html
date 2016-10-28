@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+	<h1>List the users</h1>
+
+
+	<a th:href="@{/create}">Create a user</a>
+	
+	<div th:if="${#list.isEmpty(users)}">
+		There is no user on the base
+	</div>
+	<ul>
+		<li th:each="user : ${users}"><span th:text="${user.name}"></span>
+			: <span th:text="${user.mail}"></span>
+			
+			<a th:href="@{/edit/{id}(id=${user.id})}">Editer</a> |
+			<a th:href="@{/delete/{id}(id=${user.id})}">Supprimer</a>
+			</li>
+
+	</ul>
+
+</body>
+</html>

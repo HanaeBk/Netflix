@@ -20,9 +20,9 @@ public class User {
 	private String password;
 	private boolean admin; // True = Admin ; False = Utilisateur normal
 
-	private Date valid;
-	private int montantMensuel;
-	private Long NmCarteBancaire;
+//	private Date valid;
+//	private int montantMensuel;
+//	private Long NmCarteBancaire;
 	
 	
 	// Getters & Setters
@@ -67,7 +67,8 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getValid() {
+	
+/*	public Date getValid() {
 		return valid;
 	}
 	public void setValid(Date valid) {
@@ -85,7 +86,7 @@ public class User {
 	public void setNmCarteBancaire(Long nmCarteBancaire) {
 		NmCarteBancaire = nmCarteBancaire;
 	}
-
+*/
 
 	
 	
