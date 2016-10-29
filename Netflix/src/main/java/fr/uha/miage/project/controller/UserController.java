@@ -51,7 +51,7 @@ public class UserController {
 		  		User sauvegardeUser = UserRepository.save(User);
 		  		
 		  		System.out.println("nouveau utilisateur enregistre avec identifiant : " +sauvegardeUser.getId());
-		  		return "redirect:ListUsers";
+		  		return "redirect:/";
 		  	}
 		  
 		  	@GetMapping("/User/{id}")
