@@ -7,15 +7,16 @@
 
 	<a th:href="@{/create}">Create a user</a>
 	
-	<div th:if="${#list.isEmpty(users)}">
-		There is no user on the base
+	<div th:if="${#lists.isEmpty(users)}">
+		Not a single user is registered! Your com is crap!
 	</div>
+
 	<ul>
 		<li th:each="user : ${users}"><span th:text="${user.name}"></span>
 			: <span th:text="${user.mail}"></span>
 			
-			<a th:href="@{/edit/{id}(id=${user.id})}">Editer</a> |
-			<a th:href="@{/delete/{id}(id=${user.id})}">Supprimer</a>
+			<a th:href="@{/edit/{id}(id=${user.id})}">Edit</a> |
+			<a th:href="@{/delete/{id}(id=${user.id})}">Delete</a>
 			</li>
 
 	</ul>

@@ -28,11 +28,11 @@ public class UserController {
 	private UserRepository UserRepository;
 		  	
 		  	
-	@GetMapping("/")
+			@GetMapping("/")
 		  	public String listUser(Model model) {
 		  
 		  		Iterable<User> list =  UserRepository.findAll();
-		  		model.addAttribute("user", list);
+		  		model.addAttribute("users", list);
 		  		return "ListUsers"; 
 		  	}
 		  	
@@ -51,7 +51,7 @@ public class UserController {
 		  		User sauvegardeUser = UserRepository.save(User);
 		  		
 		  		System.out.println("nouveau utilisateur enregistre avec identifiant : " +sauvegardeUser.getId());
-		  		return "redirect:/";
+		  		return "redirect:ListUsers";
 		  	}
 		  
 		  	@GetMapping("/User/{id}")
