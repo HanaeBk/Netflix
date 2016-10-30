@@ -1,7 +1,7 @@
 package fr.uha.miage.project.model;
 
-import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,12 +13,14 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	@Column(unique=true)
 	private String pseudo;
 	private String name;
 	private String prenom;
+	@Column(unique=true)
 	private String mail;
 	private String password;
-	private boolean admin; // True = Admin ; False = Utilisateur normal
+	private boolean uploads; // True = Admin ; False = Utilisateur normal
 
 //	private Date valid;
 //	private int montantMensuel;
@@ -29,6 +31,12 @@ public class User {
 	
 	
 	
+	public boolean isUploads() {
+		return uploads;
+	}
+	public void setUploads(boolean uploads) {
+		this.uploads = uploads;
+	}
 	public Long getId() {
 		return id;
 	}

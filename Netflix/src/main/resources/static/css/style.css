@@ -1337,7 +1337,7 @@ p.cart {
 	
 	font-size:1em;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
+.register-top-grid input[type="text"], .register-bottom-grid input[type="text"], input[type="password"] {
 	border: 1px solid #EEE;
 	outline-color:#FF5B36;
 	width: 96%;
@@ -1432,6 +1432,7 @@ outline: none;
 .register-but input[type="submit"]:hover {
 	background:#3f444e;
 }
+
 div.register-bottom-grid {
 	margin-top:3em;
 }
