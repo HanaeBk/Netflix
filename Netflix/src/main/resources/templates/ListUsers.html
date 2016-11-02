@@ -2,19 +2,19 @@
 <body>
 
 
-	<h1>List the users</h1>
+	<h1>Accounts list</h1>
 
 
 	<a th:href="@{/create}">Create a user</a>
 	
 	<div th:if="${#lists.isEmpty(users)}">
-		Not a single user is registered! Your com is crap!
+		Not a single user is registered!
 	</div>
 
 	<ul>
-		<li th:each="user : ${users}"><span th:text="${user.name}"></span>
+		<li th:each="user : ${users}">
+			<span th:text="${user.name}"></span>
 			: <span th:text="${user.mail}"></span>
-			
 			<a th:href="@{/edit/{id}(id=${user.id})}">Edit</a> |
 			<a th:href="@{/delete/{id}(id=${user.id})}">Delete</a>
 			</li>
