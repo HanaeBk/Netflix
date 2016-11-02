@@ -53,21 +53,55 @@ public class UserController {
 	}
 
 	@GetMapping("/create")
-	public String createUserForm(Model model) {
+	public String createUserForm(Model model, boolean admin) {
+		User u=new User();
+		u.setAdmin(admin);
 		model.addAttribute("user", new User());
 		return "CreateUser";
 	}
 
 	@PostMapping("/create")
-	public String createUser(HttpSession session, @Valid User User, BindingResult bindingResult) {
+	public String createUser(HttpSession session, @Valid User User, BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors())
 			return "CreateUser";
-
 		User sauvegardeUser = UserRepository.save(User);
 		session.setAttribute(SESSION_ATTRIBUTE_USER, User);
 		System.out.println("new user saved with id : " + sauvegardeUser.getId());
-		return "redirect:/";
+		//return "redirect:/";
+		return authentification(session, User, model);
+	}
+	
+	@GetMapping("/createA")
+	public String createAdmin(HttpSession session, Model model) {
+		User user = (User) session.getAttribute(SESSION_ATTRIBUTE_USER);
+		if(user.isAdmin())
+		{
+			System.out.println("creating new admin");
+			return createUserForm(model, true); 
+		}
+		
+		return "CreateUser";
+	}
+	
+	@PostMapping("/createA")
+	public String createA(HttpSession session, @Valid User User, BindingResult bindingResult, Model model) {
+		
+		if (bindingResult.hasErrors())
+			return "CreateUser";
+		User user = (User) session.getAttribute(SESSION_ATTRIBUTE_USER);
+		if(user.isAdmin())
+		{
+			System.out.println("creating new admin");
+			User.setAdmin(true); 
+		}
+		User sauvegardeUser = UserRepository.save(User);
+		session.setAttribute(SESSION_ATTRIBUTE_USER, User);
+		System.out.println("new user saved with id : " + sauvegardeUser.getId());
+		//return "redirect:/";
+		return authentification(session, User, model);
+		
+		
 	}
 
 	@GetMapping("/User/{id}")
